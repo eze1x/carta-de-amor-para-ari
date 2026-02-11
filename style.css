@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #c77dff, #9d4edd);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* CONTENEDOR */
+.container {
+  text-align: center;
+  z-index: 2;
+}
+
+/* CARTA */
+.envelope {
+  width: 260px;
+  height: 180px;
+  background: #f3e8ff;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.5s;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.envelope.open {
+  transform: translateY(-40px);
+}
+
+/* MENSAJE */
+.letter {
+  position: absolute;
+  inset: 10px;
+  background: #fffaf2;
+  border-radius: 8px;
+  padding: 22px;
+  overflow-y: auto;
+
+
+  /* Sensación de papel */
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.15),
+    0 6px 12px rgba(0,0,0,0.12);
+
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.6s ease;
+}
+
+.envelope.open .letter {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.letter p {
+  font-size: 16px;
+  color: #5a189a;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* TEXTO ABAJO */
+.hint {
+  margin-top: 20px;
+  color: #fdf0ff;
+  font-size: 14px;
+}
+
+/* CORAZONES */
+.hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hearts span {
+  position: absolute;
+  bottom: -30px;
+  color: rgba(255,255,255,0.7);
+  animation: float 10s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .envelope {
+    width: 220px;
+    height: 160px;
+  }
+
+  .letter p {
+    font-size: 15px;
+  }
+}
+.names {
+    font-family: 'Dancing Script', cursive;
+  font-size: 26px;
+  font-weight: normal;
+  color: #fdf0ff;
+  margin-bottom: 40px; /* 👈 MÁS ESPACIO */
+  z-index: 3;
+  position: relative;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.names span {
+  margin: 0 6px;
+}
