@@ -1,7 +1,10 @@
 const envelope = document.getElementById("envelope");
 const textElement = document.getElementById("letter-text");
 
+// Guardamos el texto original
 const originalHTML = textElement.innerHTML;
+
+// OCULTAMOS el texto al cargar la página
 textElement.innerHTML = "";
 
 let isOpen = false;
@@ -17,14 +20,14 @@ envelope.addEventListener("click", () => {
   }
 });
 
-// Efecto escribir letra por letra
+// Función de escritura (compatible con <br>)
 function typeText() {
   let i = 0;
-  const speed = 30; // menor = más rápido
+  const speed = 30;
 
   function typing() {
     if (i < originalHTML.length) {
-      textElement.innerHTML += originalHTML.charAt(i);
+      textElement.innerHTML = originalHTML.slice(0, i + 1);
       i++;
       setTimeout(typing, speed);
     }
@@ -33,7 +36,7 @@ function typeText() {
   typing();
 }
 
-// Corazones flotando (lo que ya tenías)
+// Corazones flotando
 const heartsContainer = document.querySelector(".hearts");
 
 for (let i = 0; i < 25; i++) {
