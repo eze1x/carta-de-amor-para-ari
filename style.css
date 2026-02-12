@@ -142,4 +142,14 @@ body {
   60%  { transform: scale(1.15); }
   100% { transform: scale(1); }
 }
+/* Contenedor del botón */
+.contenedor-boton {
+  display: flex;
+  justify-content: center; /* centra horizontal */
+  align-items: center;     /* centra vertical si querés */
+  flex-direction: column;  /* si tenés varios elementos uno arriba del otro */
+  margin: 20px 0;          /* espacio arriba y abajo */
+  width: 100%;
+}
+
 
