@@ -129,3 +129,17 @@ body {
 .names span {
   margin: 0 6px;
 }
+.heart {
+  display: inline-block;
+  animation: beat 1.4s infinite;
+  transform-origin: center;
+}
+
+@keyframes beat {
+  0%   { transform: scale(1); }
+  20%  { transform: scale(1.2); }
+  40%  { transform: scale(1); }
+  60%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
