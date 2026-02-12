@@ -23,7 +23,7 @@ envelope.addEventListener("click", () => {
 // Función de escritura (compatible con <br>)
 function typeText() {
   let i = 0;
-  const speed = 30;
+  const speed = 50;
 
   function typing() {
     if (i < originalHTML.length) {
@@ -47,3 +47,4 @@ for (let i = 0; i < 25; i++) {
   heart.style.fontSize = 14 + Math.random() * 20 + "px";
   heartsContainer.appendChild(heart);
 }
+
